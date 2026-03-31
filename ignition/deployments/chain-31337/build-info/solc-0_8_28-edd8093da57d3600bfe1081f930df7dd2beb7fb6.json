@@ -1,0 +1,39 @@
+{
+  "_format": "hh3-sol-build-info-1",
+  "id": "solc-0_8_28-edd8093da57d3600bfe1081f930df7dd2beb7fb6",
+  "solcVersion": "0.8.28",
+  "solcLongVersion": "0.8.28+commit.7893614a",
+  "userSourceNameMap": {
+    "contracts/Counter.sol": "project/contracts/Counter.sol"
+  },
+  "input": {
+    "language": "Solidity",
+    "settings": {
+      "evmVersion": "cancun",
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "outputSelection": {
+        "*": {
+          "": [
+            "ast"
+          ],
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ]
+        }
+      },
+      "remappings": []
+    },
+    "sources": {
+      "project/contracts/Counter.sol": {
+        "content": "// SPDX-License-Identifier: MIT\npragma solidity ^0.8.20;\n\ncontract IncidentVault {\n    uint256 public totalIncidents;\n    address public admin;\n\n    // This records WHO reported it and WHEN\n    event IncidentReported(address indexed reporter, uint256 timestamp);\n\n    constructor() {\n        admin = msg.sender;\n    }\n\n    // This is your \"Increment\" function, but with meaning\n    function reportIncident() public {\n        totalIncidents++;\n        emit IncidentReported(msg.sender, block.timestamp);\n    }\n}"
+      }
+    }
+  }
+}
