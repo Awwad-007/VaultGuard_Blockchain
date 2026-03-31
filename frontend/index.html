@@ -7,16 +7,18 @@
 </head>
 <body>
     <div class="container">
-        <h1>🛡️ CYBER-SENTINEL</h1>
-        <p>Immutable Incident Ledger</p>
-        
-        <div class="stats-card">
-            <h3>TOTAL BREACHES LOGGED</h3>
-            <h1 id="count">--</h1>
-        </div>
+        <div class="card">
+            <h1>🛡️ CYBER-SENTINEL</h1>
+            <p>Immutable Incident Ledger</p>
+            
+            <div class="stats-box">
+                <h3>TOTAL BREACHES LOGGED</h3>
+                <h2 id="count">--</h2>
+            </div>
 
-        <button id="reportBtn">REPORT NEW INCIDENT</button>
-        <p id="status">Wallet not connected</p>
+            <button id="reportBtn">REPORT NEW INCIDENT</button>
+            <p id="status" class="status-text">Wallet not connected</p>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
