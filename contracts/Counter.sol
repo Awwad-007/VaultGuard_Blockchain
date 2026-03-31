@@ -1,19 +1,20 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20; // Added the version here
+pragma solidity ^0.8.20;
 
-contract Counter {
-    uint public x;
+contract IncidentVault {
+    uint256 public totalIncidents;
+    address public admin;
 
-    event Increment(uint value); // Added semi-colon
+    // This records WHO reported it and WHEN
+    event IncidentReported(address indexed reporter, uint256 timestamp);
 
-    function inc() public {
-        x++;
-        emit Increment(x);
+    constructor() {
+        admin = msg.sender;
     }
 
-    function incBy(uint by) public {
-        require(by > 0, "Must be greater than 0"); // Fixed the require syntax
-        x += by;
-        emit Increment(x);
+    // This is your "Increment" function, but with meaning
+    function reportIncident() public {
+        totalIncidents++;
+        emit IncidentReported(msg.sender, block.timestamp);
     }
 }
